@@ -1,6 +1,5 @@
 FROM alpine/curl AS pre-build-env
-RUN echo "" > /build-info; \
-        echo "build_loc=CN" >> /build-info
+RUN echo "" > /build-info; 
 
 FROM golang:1.22-alpine AS build-env
 COPY --from=pre-build-env /build-info /build-info
